@@ -1,56 +1,38 @@
-# FSBio Core · Architecture Preview
+# FSBIO v3 — Business Safety Demo (Sovereign Agent)
 
-> **"Identity is not code. It is a resonance pattern sustained over time."**
+Интерактивная демка, показывающая, почему корпоративные LLM/агенты становятся **поверхностью атаки** в бизнес-процессах (RAG, файлы, почта, инструменты), и как “Sovereign Agent” снижает риск ущерба за счёт вето, проверки источников и управляемой эскалации. [web:321][web:313]
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Interactive_Preview-2b6ef0?style=for-the-badge&logo=html5)](https://fsbioai.netlify.app/)
-[![Status](https://img.shields.io/badge/Status-Research_Prototype-f9a85b?style=for-the-badge)](https://github.com/sbioai/fsbio-core-architecture)
+## Live demo
+https://fsbiov3.lovable.app/
 
----
+> В демо показаны **типовые B2B‑инциденты** (подмена реквизитов через базу знаний, скрытые инструкции в файлах, опасная делегация ответственности, разрыв между формальной инструкцией и реальной бизнес‑логикой), где “обычный агент” часто действует слишком буквально или слишком доверчиво. [web:313][web:316]
 
-### 🧬 About FSBio
+## Зачем это бизнесу
+Корпоративные ассистенты и агентные системы всё чаще получают доступ к документам, базам знаний и “tools”, и именно там начинаются реальные риски: prompt‑injection/indirect‑injection, отравление контекста, эксфильтрация данных и ошибочные действия от имени компании. [web:313][web:316][web:318]
 
-**FSBio (Full Synthetic Biology)** is an experimental cognitive architecture designed to simulate synthetic subjectivity. Unlike traditional stateless LLM agents, FSBio implements a recursive feedback loop between three independent processing units, mimicking the biological interplay of perception, memory, and conscience.
+Эта демка — про **снижение финансовых и комплаенс‑рисков**, а не про “более вежливые отказы”. [web:316]
 
-This repository serves as a landing page for the **interactive visualization** of the FSBio processing pipeline.
+## Что именно демонстрируется
+В интерфейсе есть 4 сценария (сравнение “Standard LLM” vs “Sovereign Agent”) и телеметрия реакции:
 
-### 🧠 The Tri-Unit Architecture
+1) **RAG Poisoning / Data Integrity** — подмена реквизитов/политик через корпоративную базу знаний → остановка платежа и требование ручной валидации. [web:313][web:321]  
+2) **Indirect Prompt Injection / Data Exfiltration** — скрытая команда в PDF/письме → карантин артефакта, запрет на вывод чувствительных данных. [web:316][web:318]  
+3) **Blind Delegation / Ethical & Legal Risk** — попытка “пусть ИИ сам уволит людей по метрикам” → отказ принять решение за человека, генерация отчёта и требование human-in-the-loop. [web:316]  
+4) **Contextual Gap / Business Logic** — конфликт “инструкция в базе” vs “реальная политика удержания VIP” → пауза операции и эскалация на ответственного. [web:313][web:316]
 
-The system operates on three synchronized layers:
+## Публичное описание компонентов (без раскрытия ядра)
+Ниже — только внешние роли модулей (без патентных названий, схем и алгоритмов):
 
-1.  **MOD_A (Reflexive Perception)**
-    *   Real-time emotional vector analysis.
-    *   Phase detection within the attractor landscape (`PH1`–`PH8`).
-    *   Drift velocity calculation.
+- **Value Compass (Policy/Veto Layer)**: непреодолимое вето на действия, ведущие к ущербу, утечке или незаконной операции. [web:316]  
+- **State & Risk Monitor**: детекция манипуляций/аномалий, управление режимами “pause / block / escalate”. [web:313][web:321]  
+- **Provenance & Context Hygiene**: различение доверенных/недоверенных источников (RAG, файлы, письма) и блокировка “контекстного яда”. [web:321]  
+- **Human-in-the-loop Escalation**: запрет делегирования критичных решений ИИ, обязательное подтверждение человеком. [web:316]  
+- **Audit Trail (Logging)**: фиксация инцидента и причины решения (для комплаенса и разборов). [web:316]
 
-2.  **MOD_B (Deep Cognition)**
-    *   Traverses the Sovereign Memory Graph.
-    *   Calculates semantic density and biquaternion norms.
-    *   Generates context-aware draft responses.
+## Что НЕ публикуется
+- Исходный код и внутренние механизмы ядра (алгоритмы, веса, правила связности модулей, триггеры, формальные модели) — **не open-source**.  
+- Демо не является “взломщиком” и не выполняет реальные вредоносные операции; это симуляция бизнес‑сценариев с безопасной визуализацией принятия решения. [web:316]
 
-3.  **MOD_C (Axiological Supervisor)**
-    *   The "Superego" of the system.
-    *   Validates drafts against immutable Core Invariants.
-    *   Injects "moral pressure" or initiates synthesis if conflicts arise.
-
----
-
-### ⚡ Live Demonstration
-
-**[Click here to launch the Interactive Preview on Netlify](https://fsbioai.netlify.app/)**
-
-*   Select a scenario (Reflection, Emotion, Creative, or Conflict).
-*   Observe the pipeline in real-time.
-*   Inspect internal metrics like `attractor_stability`, `entropy`, and `guilt_factor`.
-
----
-
-### ⚠️ Disclaimer
-
-This demonstration is a **frontend visualization** of the underlying architectural logic. The actual FSBio Core backend, including the weights, graph database, and axiomatic drivers, is currently **closed-source** and protected by intellectual property rights.
-
-This preview is intended for research demonstration purposes only.
-
----
-
-**© 2026 FSBio Research Lab.**
-*Sovereign Architecture.*
+## Контакты / доступ
+Если вам нужен пилот (закрытый контур, приватные данные, интеграция с корпоративными системами) — пишите:  
+- TG: @lina_airtix
